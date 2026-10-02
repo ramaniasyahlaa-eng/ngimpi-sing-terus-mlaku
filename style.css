@@ -1,0 +1,348 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #e9e7e1;
+    color: #292929;
+    min-height: 100vh;
+    transition: 0.3s;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.top-header {
+    background: #26326b;
+    color: white;
+    padding: 18px 25px;
+}
+
+.header-content {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.header-title {
+    font-size: 20px;
+    text-align: center;
+    flex: 1;
+}
+
+.icon-button {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   BOOK
+========================= */
+
+.book {
+    width: min(850px, 92%);
+    margin: 35px auto 20px;
+}
+
+.story-page {
+    display: none;
+    min-height: 650px;
+    background: #fffdf8;
+    padding: 70px;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    animation: fadeIn 0.35s ease;
+}
+
+.story-page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================
+   COVER
+========================= */
+
+.cover {
+    min-height: 510px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cover-decoration {
+    font-size: 50px;
+    color: #26326b;
+    margin-bottom: 20px;
+}
+
+.cover-label {
+    letter-spacing: 5px;
+    font-size: 15px;
+    margin-bottom: 25px;
+    color: #777;
+}
+
+.cover h1 {
+    font-size: 52px;
+    line-height: 1.15;
+    color: #26326b;
+}
+
+.cover-line {
+    width: 100px;
+    height: 3px;
+    background: #26326b;
+    margin: 30px 0;
+}
+
+.cover-description {
+    max-width: 500px;
+    line-height: 1.7;
+    color: #555;
+}
+
+.author {
+    margin-top: 35px;
+    font-size: 18px;
+}
+
+
+/* =========================
+   STORY
+========================= */
+
+.story-header {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.story-header span {
+    color: #26326b;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.story-header h2 {
+    margin-top: 8px;
+    font-size: 32px;
+    color: #26326b;
+}
+
+.story-content {
+    font-size: 19px;
+    line-height: 1.9;
+}
+
+.story-content p {
+    margin-bottom: 22px;
+}
+
+.story-quote {
+    margin-top: 40px;
+    padding: 20px;
+    border-left: 4px solid #26326b;
+    background: #f1f1f5;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.ending {
+    font-weight: bold;
+    text-align: center;
+    color: #26326b;
+    font-size: 23px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.pagination-nav {
+    width: min(850px, 92%);
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.pagination-nav button {
+    border: none;
+    background: #26326b;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.pagination-nav button:hover {
+    opacity: 0.85;
+}
+
+.pagination-nav button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+.page-number {
+    font-weight: bold;
+}
+
+
+/* =========================
+   TOOLBAR
+========================= */
+
+.toolbar {
+    width: min(850px, 92%);
+    margin: 10px auto 30px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.toolbar button {
+    border: 1px solid #ccc;
+    background: white;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    background: #26326b;
+    color: white;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+footer p:first-child {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark {
+    background: #171717;
+    color: #eeeeee;
+}
+
+body.dark .story-page {
+    background: #242424;
+    color: #eeeeee;
+}
+
+body.dark .story-header {
+    border-color: #444;
+}
+
+body.dark .story-header h2,
+body.dark .cover h1 {
+    color: #aeb7ff;
+}
+
+body.dark .cover-decoration {
+    color: #aeb7ff;
+}
+
+body.dark .story-quote {
+    background: #303030;
+    border-color: #aeb7ff;
+}
+
+body.dark .cover-description,
+body.dark .cover-label {
+    color: #ccc;
+}
+
+body.dark .toolbar button {
+    background: #333;
+    color: white;
+    border-color: #555;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .header-content {
+        flex-direction: column;
+    }
+
+    .header-title {
+        font-size: 17px;
+    }
+
+    .story-page {
+        padding: 35px 25px;
+        min-height: 600px;
+    }
+
+    .cover h1 {
+        font-size: 38px;
+    }
+
+    .story-header h2 {
+        font-size: 25px;
+    }
+
+    .story-content {
+        font-size: 17px;
+    }
+
+    .pagination-nav button {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}
+```
