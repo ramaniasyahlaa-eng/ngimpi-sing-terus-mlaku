@@ -1,3 +1,7 @@
+// ================================ 
+// SISTEM HALAMAN 
+// ================================
+
 const pages = document.querySelectorAll(".story-page");
 
 const prevBtn = document.getElementById("prevBtn");
