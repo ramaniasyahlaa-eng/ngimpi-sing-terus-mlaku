@@ -1,7 +1,3 @@
-// ================================
-// SISTEM HALAMAN
-// ================================
-
 const pages = document.querySelectorAll(".story-page");
 
 const prevBtn = document.getElementById("prevBtn");
@@ -17,22 +13,22 @@ const totalPages = pages.length;
 totalPagesText.textContent = totalPages;
 
 
-// ================================
+// ============================
 // MENAMPILKAN HALAMAN
-// ================================
+// ============================
 
 function tampilkanHalaman() {
 
-    pages.forEach((page) => {
+    pages.forEach(function(page) {
         page.classList.remove("active");
     });
 
-    const halaman = document.querySelector(
-        `.story-page[data-page="${currentPage}"]`
+    const halamanSekarang = document.querySelector(
+        '.story-page[data-page="' + currentPage + '"]'
     );
 
-    if (halaman) {
-        halaman.classList.add("active");
+    if (halamanSekarang) {
+        halamanSekarang.classList.add("active");
     }
 
     currentPageText.textContent = currentPage;
@@ -51,7 +47,6 @@ function tampilkanHalaman() {
         nextBtn.disabled = false;
     }
 
-    // Kembali ke atas halaman
     window.scrollTo({
         top: 0,
         behavior: "smooth"
@@ -59,11 +54,11 @@ function tampilkanHalaman() {
 }
 
 
-// ================================
-// TOMBOL SEBELUMNYA
-// ================================
+// ============================
+// SEBELUMNYA
+// ============================
 
-prevBtn.addEventListener("click", function () {
+prevBtn.addEventListener("click", function() {
 
     if (currentPage > 1) {
         currentPage--;
@@ -73,11 +68,11 @@ prevBtn.addEventListener("click", function () {
 });
 
 
-// ================================
-// TOMBOL SELANJUTNYA
-// ================================
+// ============================
+// SELANJUTNYA
+// ============================
 
-nextBtn.addEventListener("click", function () {
+nextBtn.addEventListener("click", function() {
 
     if (currentPage < totalPages) {
         currentPage++;
@@ -87,13 +82,13 @@ nextBtn.addEventListener("click", function () {
 });
 
 
-// ================================
+// ============================
 // DARK MODE
-// ================================
+// ============================
 
 const darkModeBtn = document.getElementById("darkModeBtn");
 
-darkModeBtn.addEventListener("click", function () {
+darkModeBtn.addEventListener("click", function() {
 
     document.body.classList.toggle("dark");
 
@@ -106,9 +101,9 @@ darkModeBtn.addEventListener("click", function () {
 });
 
 
-// ================================
+// ============================
 // UKURAN FONT
-// ================================
+// ============================
 
 const fontMinus = document.getElementById("fontMinus");
 const fontReset = document.getElementById("fontReset");
@@ -117,19 +112,19 @@ const fontPlus = document.getElementById("fontPlus");
 let fontSize = 19;
 
 
-// Perkecil tulisan
-fontMinus.addEventListener("click", function () {
+// Kecilkan
+fontMinus.addEventListener("click", function() {
 
     if (fontSize > 14) {
-        fontSize -= 1;
+        fontSize--;
         ubahUkuranFont();
     }
 
 });
 
 
-// Ukuran normal
-fontReset.addEventListener("click", function () {
+// Normal
+fontReset.addEventListener("click", function() {
 
     fontSize = 19;
     ubahUkuranFont();
@@ -137,21 +132,20 @@ fontReset.addEventListener("click", function () {
 });
 
 
-// Perbesar tulisan
-fontPlus.addEventListener("click", function () {
+// Besarkan
+fontPlus.addEventListener("click", function() {
 
     if (fontSize < 28) {
-        fontSize += 1;
+        fontSize++;
         ubahUkuranFont();
     }
 
 });
 
 
-// Fungsi mengubah ukuran font
 function ubahUkuranFont() {
 
-    document.querySelectorAll(".story-content").forEach((content) => {
+    document.querySelectorAll(".story-content").forEach(function(content) {
 
         content.style.fontSize = fontSize + "px";
 
@@ -160,9 +154,18 @@ function ubahUkuranFont() {
 }
 
 
-// ================================
-// JALANKAN SAAT WEBSITE DIBUKA
-// ================================
+// ============================
+// MULAI
+// ============================
 
 tampilkanHalaman();
-```
+
+    <footer>
+        <p>Mimpi yang Terus Berjalan</p>
+        <p>Terus belajar • Terus mencoba • Terus berkembang</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
